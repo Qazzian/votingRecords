@@ -1,0 +1,22 @@
+{
+  "name": "mongodb",
+  "version": "0.0.0",
+  "description": "test project fro learning mongodb (again)",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "~1.3.23",
+    "mongoose": "~3.8.3",
+    "express": "~3.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "test",
+    "tutorial"
+  ],
+  "author": "Qazzian",
+  "license": "BSD-2-Clause"
+}
