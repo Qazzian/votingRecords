@@ -40,5 +40,5 @@ I try my best to keep it as clean and modular as possible as I find it makes cha
 I'm not sure this task showed off my strongest points as I'm much more of a client side developer and rarely need to setup the server side from scratch, but I tackled this as it looked like an interesting challenge and helped me to further understand the express.js web framework.
 
 
-
+I have attached a few links to some of my other projects to the email if you would like to look at them as well.
 
