@@ -1,26 +1,35 @@
 <form action="/myVote" method="post">
 
-<label for="votingArea">where are you voting from?</label>
-<select name="area" id="votingArea">
-	<option value="0">Anonymous</option>
-	{{#constituancies}}
-	<option value="{{id}}">{{name}}</option>
-	{{/constituancies}}
-</select>
-
+<p>
+	<label for="votingArea">where are you voting from?</label>
+	<select name="areaId" id="votingArea">
+		<option value="0">Anonymous</option>
+		{{#constituancies}}
+		<option value="{{id}}">{{name}}</option>
+		{{/constituancies}}
+	</select>
+</p>
 	
-<label for="isVoting">Are you going to vote?</label>
-<label for="isVotingYes">Yes</label><input type="radio" name="isVoting" id="isVotingYes" />
-<label for="isVotingYes">No</label><input type="radio" name="isVoting" id="isVotingNo" />
+<p>
+	<label for="isVoting">Are you going to vote?</label>
+	<label for="isVotingYes">Yes</label><input type="radio" name="isVoting" id="isVotingYes" value="yes"/>
+	<label for="isVotingYes">No</label><input type="radio" name="isVoting" id="isVotingNo" value="no"/>	
+</p>
 
-<label for="party">Who are you voting for?</label>
+<p>
+	<label for="party">Who are you voting for?</label>
 
-<select name="party" id="party">
-	<option value="0">Anonymous</option>
-	{{#parties}}
-	<option value="{{id}}">{{name}}</option>
-	{{/parties}}
-</select>
+	<select name="party" id="party">
+		<option value="0">Anonymous</option>
+		{{#parties}}
+		<option value="{{id}}">{{name}}</option>
+		{{/parties}}
+	</select>
+</p>
+
+<p>
+	<input type="submit" value="Submit" />
+</p>
 
 
 </form>

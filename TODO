@@ -2,12 +2,16 @@
 
 = Backend
 
-- mongodb with pre loaded data.
+- mongodb with pre loaded data. 
+	- NOT DONE - Used in memory storage for now as I ran out of time refreshing my mongo knowledge.
 - create install script which will load the constituancy data from the doanloaded csv files
+	- THis is done of server load for now
 
 - express frontend sever with middleware modules
--- load static files
--- handle post requests for the vote counts
+-- load static files 
+	- Middleware setup but I've not created any static files to load
+-- handle post requests for the vote counts 
+	- DONE
 
 = frontend
 
@@ -18,12 +22,14 @@
 - home
 -- how are you going to vote?
 -- have submission form
--- show global party summary on the right
+	DONE
+-- show global voting summary on the right
+	DONE
 
 - form
--- area dropdown
--- are you voting? radio buttons
---- if yes show party dropdown (default)
+-- area dropdown - DONE
+-- are you voting? radio buttons - DONE
+--- if yes show party dropdown (default) 
 --- else hide party dropdown
 -- party dropdown
 -- validation
@@ -48,7 +54,7 @@
 Create an 'unkown' area first for users who want to keep this annonymous.
 If possible always present 'unkown' before the other areas.
 
-- parties
+- parties - DONE
 -- name
 -- id
 -- meta data
@@ -58,12 +64,10 @@ Create an 'others' party first. If possible present it last in the list.
 
 For vote counts, record by area then add them up for the uk wide count.
 
-- vote-counts
+- vote-counts - DONE
 -- area-id
 -- party-id
 -- vote-count
 
 - is-voting-counts
--- area-id
--- yes/no
--- count
+ - DONE I'm treating no votes as a party 

@@ -1,13 +1,19 @@
+/*jshint node:true*/
+
+"use strict";
+
+/**
+ * The home page controller
+ */
 
 var votingForm = require('../views/votingForm'),
-	votingResults;
+	voteTable = require('../views/voteTable');
 
-var home = function(req, res){
-	res.render('layout', {
-		locals: {
-			page: votingForm(res)
-		}
+
+var homeController = function(app){
+	app.get('/', votingForm, voteTable, function(req, res){
+		res.renderPartials();
 	});
 };
 
-module.exports = home;
+module.exports = homeController;

@@ -2,16 +2,42 @@
 
 "use strict";
 
-var partyData = require('../modules/party.js').getAll();
+/**
+ * Sets up the data needed for the voting form and returns the rendered html for it.
+ */
 
-var cachedHtml = false;
+var partyData = require('../modules/party.js').getAll(),
+	areas = require('../modules/constituencies.js');
 
-var VF = function(res){
-	if (cachedHtml)
-		return cachedHtml;
+var cachedHtml = false,
+	areaData;
 
-	cachedHtml = res.render('votingForm', { locals: {parties: partyData} });
-	return cachedHtml;
+var VF = function(req, res, next){
+	//console.log("RES: ", res);
+
+	if (cachedHtml){
+		res.locals.partials.push(cachedHtml);
+		return next();
+	}
+		
+
+	var context = {
+		locals: {
+			parties: partyData,
+			constituancies: []
+		} 
+	};
+
+	areas.getAll(function(data){
+		context.locals.constituancies = data;
+		res.render('votingForm', context, function(err, html){
+			if (!err) {
+				cachedHtml = html;
+			}
+			res.locals.partials.push(cachedHtml);
+			next(err);
+		});
+	});
 };
 
 module.exports = VF;

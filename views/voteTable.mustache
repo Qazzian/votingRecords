@@ -1,0 +1,17 @@
+<table>
+	<caption>Votes in {{area.name}}</caption>
+	<thead><tr>
+		<th>party</th>
+		<th>votes</th>
+		<th>percent</th>
+	</tr></thead>
+	<tbody>
+		{{#parties}}
+			<tr class="party-{{partyAbbr}}">
+				<th>{{name}}</th>
+				<td>{{voteCount}}</td>
+				<td>{{votePercent}}%</td>
+			</tr>
+		{{/parties}}
+	</tbody>
+</table>

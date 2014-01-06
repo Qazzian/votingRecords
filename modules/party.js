@@ -1,10 +1,14 @@
+/*jshint node:true*/
 
+"use strict";
 
-var Parties = function(){
-
-};
+/**
+ * Simple interface for getting party data.
+ * parties are hard coded in random order. 
+ */
 
 var partyList = [
+	{id: 0, name: "Abstaining", abbr: "N/A", color: '#000000'},
 	{id: 1, name: "Labour", abbr: "Lab", color: '#DC241F'},
 	{id: 2, name: "Conservative", abbr: "Con", color: '#0087DC'},
 	{id: 3, name: "Liberal Democrat", abbr: "LD", color: '#FDBB30'},
@@ -18,12 +22,20 @@ var partyList = [
 ];
 
 
-Parties.prototype = {
+module.exports = {
 
+	/**
+	 * return an Array of all the parties.
+	 */
 	getAll: function(){
 		return partyList;
+	},
+
+	/**
+	 * get a single party based on it's ID.
+	 * The ID happens to match it's index in the array.
+	 */
+	getParty: function(id){
+		return partyList[id];
 	}
-
 };
-
-module.exports = new Parties();
